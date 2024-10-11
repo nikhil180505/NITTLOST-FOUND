@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #3515d7;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .team-member {
+            margin-bottom: 20px;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 20px;
+            vertical-align: middle;
+        }
+
+        .team-member .info {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"><%- include('header') %></div>
+    <div class="container">
+        <h1>About Us</h1>
+
+        <p>Welcome to NITTLOST&FOUND, where our mission is to facilitate the students of Nit Trichy to find their lost
+            items Since our inception in 2024</p>
+
+        <h2>Our Mission</h2>
+        <p>Our mission is to create a seamless and efficient platform that connects the community of the National
+            Institute of Technology, Tiruchirappalli (NITT) in the quest for lost items. We aim to empower students and
+            staff by providing a secure, user-friendly interface for reporting and recovering lost belongings.</p>
+        <h2>Our Values</h2>
+        <ul>
+            <li><b>Community</b>: We believe in fostering a sense of belonging and connection within the NITT community,
+                encouraging collaboration and support among students and staff.</li>
+            <br>
+            <li><b>Integrity</b>: We prioritize honesty and transparency in our platform, ensuring that all users can
+                trust the
+                processes for reporting and recovering lost items.</li>
+            <br>
+            <li><b>Responsibility</b>: We encourage accountability among users to care for their belongings and assist
+                others
+                in the community in their search efforts.</li>
+            <br>
+            <!-- Add more values as needed -->
+        </ul>
+
+
+        <h2>Our History</h2>
+        <br>
+        <p>"We are a group of dedicated students from the National Institute of Technology, Tiruchirappalli (NIT
+            Trichy), currently pursuing our Master of Computer Applications (MCA). Inspired by the challenges faced by
+            our peers in reporting and recovering lost items on campus, we embarked on a mission to create a
+            user-friendly web application that addresses these issues.</p>
+        <br>
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to get in touch with us, please feel free to <a
+                href="/contact">7974740186</a>.</p>
+        <a href="mailto:nikhilji7974@gmail.com.com">Email Us @nikhilji7974@gmail.com</a>
+
+    </div>
+    <div id="footer" ><%- include('footer') %></div>
+
+</body>
+
+</html>

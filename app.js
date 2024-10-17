@@ -87,7 +87,7 @@ app.get('/privacypolicypage',async(req,res)=>{
 
 app.get('/termsandconditionpage',async(req,res)=>{
     res.render('termsandconditionpage');
-})
+}) 
 
 
 const PORT = process.env.PORT || 3000;

@@ -212,21 +212,22 @@ router.post('/post',jwtAuthMiddleware,upload.single('photo'),async(req,res)=>{
 
  
 });
-
+ 
 router.get('/posts',jwtAuthMiddleware,async(req,res)=>{
     try{
         
         const allUsers = await User.find();
         
     var allposts=[];
-    console.log(allposts);
+
     allUsers.forEach(ele=>{
         const userPosts=ele.posts;
         userPosts.forEach(posts=>{
             allposts.push(posts);
         })
     })
-    console.log(allposts);
+    allposts.sort((a, b) => new Date(b.postedOn) - new Date(a.postedOn));   console.log(allposts);
+
    return res.status(200).json({success:1,allposts:allposts})
    
     

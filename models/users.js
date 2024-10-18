@@ -1,6 +1,6 @@
 const mongoose =require('mongoose');
 // const { v4: uuidv4 } = require('uuid');
-const bcrypt = require('bcrypt'); // instead of require('bcrypt')
+const bcrypt = require('bcryptjs'); // instead of require('bcrypt')
 
 const { type } = require('os');
 const userSchema=new mongoose.Schema({

@@ -4,7 +4,7 @@ const User = require('./../models/users.js');
 const upload = require('./../multer');
 const { jwtAuthMiddleware ,generateToken} = require('../jwt.js');
 const db = require('./../db.js');
-const bcrypt=require('bcrypt');
+const bcrypt=require('bcryptjs');
 
 //check admin
 const checkAdminRole = async(userId)=>{

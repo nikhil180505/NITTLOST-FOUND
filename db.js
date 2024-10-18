@@ -1,29 +1,29 @@
-const mongoose =require('mongoose');
+const mongoose = require('mongoose');
 
-const mongooseUri= process.env.MONGO_URL;
+const mongooseUri = process.env.MONGO_URL; // Local MongoDB URI
+const mongoosrUriAtlas = process.env.MONGO_URL_ATLAS; // MongoDB Atlas URI
 
-mongoose.connect(mongooseUri,{
+// Connect to MongoDB Atlas
+mongoose.connect(mongoosrUriAtlas, {
     useNewUrlParser: true,
-    useUnifiedTopology:true
-})
+    useUnifiedTopology: true,
+});
 
-const db=mongoose.connection;
+const db = mongoose.connection;
 
-// db.on('connection',()=>{
+// Event listeners for connection  states
+db.on('connected', () => {
+    console.log('Connection established:', db.host);
+});
 
-// });
-db.on('connected',()=>{
-    console.log('connection established ',db.host)
+db.on('error', (error) => {
+    console.error('There is some error with the connection:', error);
+});
 
-}); 
+db.on('disconnected', () => {
+    console.log('The connection is disconnected'); 
+});
+
+// Export the connection  
+module.exports = db;
  
-db.on("error",()=>{
-    console.error('there is some error with the connection',error)
-});
-
-db.on("disconnected",()=>{
-    console.log('the connection is disconnected')
-});
-
-  
-module.exports = db; 

@@ -4,8 +4,8 @@ const mongooseUri = process.env.MONGO_URL; // Local MongoDB URI
 const mongoosrUriAtlas = process.env.MONGO_URL_ATLAS; // MongoDB Atlas URI
 
 // Connect to MongoDB Atlas
-mongoose.connect(mongooseUri, {
-    useNewUrlParser: true,
+mongoose.connect(mongoosrUriAtlas, {
+    useNewUrlParser: true,     
     useUnifiedTopology: true,
 });
 

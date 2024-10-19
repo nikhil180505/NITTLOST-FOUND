@@ -4,7 +4,7 @@ const mongooseUri = process.env.MONGO_URL; // Local MongoDB URI
 const mongoosrUriAtlas = process.env.MONGO_URL_ATLAS; // MongoDB Atlas URI
 
 // Connect to MongoDB Atlas
-mongoose.connect(mongoosrUriAtlas, {
+mongoose.connect(mongooseUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -23,7 +23,7 @@ db.on('error', (error) => {
 db.on('disconnected', () => {
     console.log('The connection is disconnected'); 
 });
-
+       
 // Export the connection  
 module.exports = db;
  

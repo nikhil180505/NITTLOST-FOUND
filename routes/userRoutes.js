@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('./../models/users.js');
 const upload = require('./../multer');
+const cloudinary = require('./../cloudinaryConfig.js')
 const { jwtAuthMiddleware ,generateToken} = require('../jwt.js');
 const db = require('./../db.js');
 const bcrypt=require('bcryptjs');
@@ -184,12 +185,23 @@ router.delete('/:userID',jwtAuthMiddleware,async(req,res)=>{
 // posting new items 
 
 router.post('/post',jwtAuthMiddleware,upload.single('photo'),async(req,res)=>{
-  
+  var cloudinaryfilelink;
+  try{ 
+   await cloudinary.uploader.upload(req.file.path, function (err, result){
+        if(err) {
+          console.log(err);
+        }
+        else {
+             cloudinaryfilelink = result.secure_url;
+            console.log('sucess!',cloudinaryfilelink);   
+        }     
+      })
 
-    try{
+    
     const userId = req.user.id
     const user = await User.findById(userId);
-    const photoLink = req.file.path;
+    const photoLink = cloudinaryfilelink;
+    console.log("hey--" ,photoLink);
     const details = req.body.details;
     const type = req.body.type;
 

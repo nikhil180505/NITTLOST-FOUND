@@ -5,7 +5,7 @@ const jwtAuthMiddleware =async (req,res,next)=>{
 
     const authorization=req.headers.authorization;
     if(!authorization) {
-        console.log(authorization);
+        // console.log(authorization);
         return res.status(401).json({success:0,message:'unauthorized'});
     }
 

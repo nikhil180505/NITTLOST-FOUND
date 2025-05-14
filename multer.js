@@ -8,7 +8,7 @@ const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
         folder: 'uploads', // Optional: Define a folder in Cloudinary
-        allowed_formats: ['jpg', 'png', 'jpeg', 'gif'],
+        allowed_formats: ['jpg', 'png', 'jpeg', 'gif','webp'],
         filename: (req, file) => {
             const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
             return `${file.fieldname}-${uniqueSuffix}${path.extname(file.originalname)}`;

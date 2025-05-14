@@ -36,7 +36,7 @@ router.post('/signup', async(req,res)=>{
     try{
         
         const data = req.body
-            console.log(data);
+            // console.log(data);
         if(data.role === 'admin'){ 
             if( await alreadyadmin ()){
                 console.log('no two admins');
